@@ -40,10 +40,11 @@ namespace BasicForm2
         private void button1_Click(object sender, EventArgs e)
         {
             // Calculate the gross pay
-            //decimal hwork = textBox1.Text();
-            //decimal hpay = textBox2.Text();
-            //decimal cal = (Decimal.hwork * Decimal.hpay);
-            //MessageBox.Show("The Gross Pay is {0}", cal.ToString("c"));
+            double hwork = textBox1_TextChanged();
+            double hpay = textBox2_TextChanged();
+            double cal = (hwork * hpay);
+            Console.WriteLine(hwork);
+            // MessageBox.Show(String.Format("The Gross Pay is {0}", cal));
 
         }
 
