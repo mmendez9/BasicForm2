@@ -17,43 +17,22 @@ namespace BasicForm2
             InitializeComponent();
         }
 
-        private double textBox1_TextChanged()
-        {
-            string work = Console.ReadLine();
-            double hwork = Convert.ToDouble(work);
-            return hwork;
-        }
-
-        private double textBox2_TextChanged()
-        {
-            string pay = Console.ReadLine();
-            double hpay;
-            double.TryParse(pay, out hpay);
-            return hpay;
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             // Calculate the gross pay
-            double hwork = textBox1_TextChanged();
-            double hpay = textBox2_TextChanged();
-            double cal = (hwork * hpay);
-            Console.WriteLine(hwork);
-            // MessageBox.Show(String.Format("The Gross Pay is {0}", cal));
+            decimal hwork = Decimal.Parse(textBox1.Text);
+            decimal hpay = Decimal.Parse(textBox2.Text);
+            decimal cal = (hwork * hpay);
 
+            // Write the gross pay in textBox3
+            textBox3.Text = cal.ToString("c");
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             // Clear the data
             textBox1.Clear();
             textBox2.Clear();
-
+            textBox3.Clear();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -61,5 +40,7 @@ namespace BasicForm2
             // Close the program
             this.Close();
         }
+
+
     }
 }
